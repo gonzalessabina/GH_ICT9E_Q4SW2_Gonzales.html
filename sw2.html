@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time Converter!</title>
+</head>
+<body>
+<style>
+        body {
+            background-image: url(https://i.pinimg.com/564x/00/17/c0/0017c0178994589053d519a902bc011f.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        body {
+            font-family: courier, monospace;
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        input[type="button"] {
+            background-color: #C8A2C8;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        
+        #output {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+    <h1>Unit Converter | Seconds to Minutes, Days, Hours</h1>
+    <!--Input goes here-->
+        <p>Type Desired Value: <input type="text" id="inputTime"></p>
+        <input type="button" value="Convert to Minutes" onclick="secondsTominutes()"><br><br>
+        <input type="button" value="Convert to Hours" onclick="secondsTohours()"><br><br>
+        <input type="button" value="Convert to Days" onclick="secondsTodays()"><br><br>
+    <!--Output goes here-->
+        <h2>The Converted Value is:</h2>
+        <p><span id="output"></span></p>
+	<script>
+        function secondsTominutes() {
+        var seconds = document.getElementById("inputTime").value;
+        var minutes = seconds / 60;
+        document.getElementById("output").innerHTML = minutes;
+    }
+        function secondsTohours() {
+        var seconds = document.getElementById("inputTime").value;
+        var hours = seconds / 3600;
+        document.getElementById("output").innerHTML = hours;
+    }
+    
+        function secondsTodays() {
+        var seconds = document.getElementById("inputTime").value;
+        var days = seconds / (24 * 3600);
+        document.getElementById("output").innerHTML = days;
+    }
+    </script>
+</body>
+</html>
